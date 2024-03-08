@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Muvi</title>
+   <link rel="stylesheet" href="style/style.css">
+   <link rel="shortcut icon" href="images/logo-pequena.png" type="image/x-icon">
+</head>
+<body>
+   <header>
+      <nav>
+         <img src="images/logo.png" alt="Logo do Muvi">
+            <div class="menusuperior">
+               <ul>
+                <li>
+                   <div class="barradepesquisa">
+                     <button id="botaopesquisa" onclick="pesquisar()">Pesquisar</button>
+                     <input type="text" id="pesquisainput" placeholder="Pesquisar...">
+                   </div>
+                </li>
+                <li><button id="botaoMenuLogin" class="botaomenu" onclick="login()"> Login </button></li>
+                <li><button id="botaoMenuCadastro" class="botaomenu" onclick="Cadastro()"> Cadastre-se </button></li>
+               </ul>
+            </div>
+      </nav>
+  </header>
+  <main>
+      <div class="barralateral">
+         <p> <img class="icone-menu" src="images/icones/home-icone.png">Página principal</p>
+         
+         <p> <img class="icone-menu" src="images/icones/filme-icone.png">Filmes</p>
+         <p> <img class="icone-menu" src="images/icones/serie-icone.png">Séries</p>
+         <p> <img class="icone-menu" src="images/icones/notificacoes-icone.png">Notificações</p>
+         <p> <img class="icone-menu" src="images/icones/configuracoes-icone.png">Configurações</p>
+      </div>
+      <section id="banner-principal">
+         <div class="slider">
+            <div class="slides">
+               <!--Radio Buttons-->
+               <input type="radio" name="radio-btn" id="radio1">
+               <input type="radio" name="radio-btn" id="radio2">
+               <input type="radio" name="radio-btn" id="radio3">
+               <input type="radio" name="radio-btn" id="radio4">
+               <!--Fim Radio Buttons-->
+               <!--Slide Images-->
+               <div class="slide first">
+                  <img src="images/interestelar-banner.png" alt="Banner 1">
+               </div>
+               <div class="slide">
+                  <img src="images/batman-logo.png" alt="Banner 2">
+               </div>
+               <div class="slide">
+                  <img src="images/vingadores-banner.png" alt="Banner 3">
+               </div>
+               <div class="slide">
+                  <img src="images/banner-velozes-e-furiosos-9.png" alt="Banner 4">
+               </div>
+               <!--Fim Slide Images-->
+               <!--Navigation auto-->
+               <div class="navigation-auto">
+                  <div class="auto-btn1"></div>
+                  <div class="auto-btn2"></div>
+                  <div class="auto-btn3"></div>
+                  <div class="auto-btn4"></div>
+               </div>
+            </div>
+            <div class="manual-navigation">
+               <label for="radio1" class="manual-btn"></label>
+               <label for="radio2" class="manual-btn"></label>
+               <label for="radio3" class="manual-btn"></label>
+               <label for="radio4" class="manual-btn"></label>
+            </div>
+         </div>
+      </section>
+      <section id="catalogo">
+         <h2> Filmes favoritos</h2>
+         <div id="lista-filmes">
+            <!-- A lista de filmes será preenchida dinamicamente com JavaScript -->
+        </div>
+      </section>   
+  </main>
+  <footer>
+         <p>Desenvolvido por: Hiago Santos Silva</p>
+        
+  </footer>
+  <script src="script/script.js"></script>
+</body>
+</html>

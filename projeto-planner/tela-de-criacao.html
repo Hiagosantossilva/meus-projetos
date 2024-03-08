@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/menu.css">
+    <link rel="shortcut icon" href="midias/image/logo-icone.png" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <!--Menu lateral -->
+        <div class="barralateral">
+            <a href="index.html"> <p> Página principal</p> </a> 
+            <a href="tela-de-criacao.html"> <p>Página de criação</p> </a> 
+        </div>
+    </nav>
+
+    <header>
+        <h1>
+            Tela de criação
+        </h1>
+    </header>
+
+   <main>
+        <!--Seção de criação de Roadmaps -->
+        <section class="CriadorSection">
+            <ul class="opcoesCriador">
+                <li> <h2>Criador de RoadMap</h2></li>
+                <li> <button type="button" id="btnPadrao"  onclick="criarTarefa()">Criar tarefa</button></li>
+            </ul>
+            <div id="criador"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Planner - Criado por Hiago Santos Silva (2024).</p>
+    </footer>
+
+    <script src="script/tela-de-criacao.js"></script>
+    <script src="script/contagem-de-pontos.js"></script>
+
+</body>
+</html>

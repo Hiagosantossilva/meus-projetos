@@ -1,0 +1,21 @@
+.barraDeProgresso{
+    padding: 0;
+    margin: 15px;
+    width: 900px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgb(185, 185, 185);
+}
+
+.barraDeProgresso div {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #222;
+    
+}
+#contadorProgresso{
+    margin-bottom: 50px;
+}
+.bandeira{
+    display: inline-block;
+}

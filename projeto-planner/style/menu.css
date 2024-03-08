@@ -1,0 +1,41 @@
+@charset "UTF-8";
+:root { 
+    --cor0: #2F455C;
+    --Cor1: ;    
+}
+
+main, header{
+    margin-left: 200px;
+}
+
+
+.barralateral{
+    height: 100%;
+    width: 145px;
+    background-color: white;
+    color: var(--cor003);
+    display: block;
+    position: fixed;
+    flex-direction: column;  
+}
+
+
+.barralateral a{
+    margin: auto;
+    padding: 15px;
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--cor001);
+
+}
+
+.barralateral p:hover{
+    transition: 0.5s;
+    background-color: var(--cor0);
+    color: white;
+}
+
+
+
