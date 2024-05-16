@@ -1,53 +1,83 @@
 @charset "UTF-8";
 /* Estilos Globais */
 :root { 
-    --cor0: rgb(43, 43, 255);
+    --cor0: #1c435d;
     --Cor1: ;    
 }
 
 *{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    font-size: 15px;
 }
 
 body{
-    background-color: rgb(233, 235, 240);
+    background-color: rgb(255, 255, 255);
+}
+main{
+    max-width: 1580px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 100px;
+
 }
 h1{
-    font-weight: bolder;
     color: var(--cor0);
-    font-size: 20px;
+    font-size: 19px;
+    padding: 17px;
 }
 h2{
-    padding: 17px;
+    font-size: 15px;
     color: var(--cor0);
 }
 p{
-    padding: 10px;
+    font-size: 14px;
+    padding: 7px;
 }
 
-section{
-    margin-top: 50px;
-    margin-left: 50px;
+
+/* Header */
+
+.nomeRoadmap{
+    padding: 15px;
+    display: flex;
+
+}
+.nomeRoadmap input:focus{
+    outline: none;
+    border: 1px solid #ccc;
+}
+#nameRoadmap{
+    height: 60px;
+    font-weight: bolder;
+    color: var(--cor0);
+    font-size: 25px;
+    border: 0;
+    background-color: #17171b00;
 }
 
-/* Tela-de-cricao */
+.salvarNomeRoadmapStyle{
+    height: 20px;
+}
+.salvarNomeRoadmapStyle:hover{
+    cursor: pointer;
+
+}
 
 /* Criação de tarefas */
 
 section.CriadorSection{
-    border: 1px solid black;
-    background-color: white;
-    border-radius: 20px;
-    margin: 25px;
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.041);
+    border: 1px solid rgb(184, 184, 184);
+    background-color: rgb(241, 241, 241);
+    border-radius: 7px;
+    margin: 15px;
+    padding: 10px;
 }
 
 section.CriadorSection input{
-    border-radius: 20px;
+    border-radius: 7px;
     height: 15px;
-    padding: 15px;
-    border: 1px solid black;
+    padding: 10px;
+    border: 1px solid rgb(184, 184, 184);
 }
 
 ul.opcoesCriador{
@@ -61,35 +91,64 @@ li{
     margin: 10px;
 }
 #btnPadrao{
+    border: 0;
     background-color: var(--cor0);
     color: white;
-    padding: 10px;
-    border-radius: 20px;
-    border: 1px solid black;
+    padding: 12px;
+    border-radius: 7px;
 }
 #btnPadrao:hover{
     transition: 0.5s;
-    background-color: rgba(255, 255, 255, 0.548);
+    background-color: rgba(0, 0, 0, 0.548);
     cursor: pointer;
-    color: var(--cor0);
 }
 
-#criador{
-    margin-left: 80px;
-}
 
+#descricao {
+    width: 70%;
+}
 /*Roadmap de tarefas*/
+p.dataTarefaEstilo{
+    font-weight: lighter;
+    font-size: 12px ;
+    color: gray;
+}
+p.descricaoTarefaEstilo{
+    color: gray;
+   
+
+}
+p.pontosTarefaEstilo{
+    background-color: var(--cor0);
+    color: white;
+    padding: 7px;
+    margin: 7px;
+    max-width: 200px;
+    border-radius: 7px;
+}
+.selectBox{
+    margin: 7px;
+
+}
 #posicaoTarefa{
-    font-size: 25px;
+    font-size: 55px;
 }
 .RoadmapSection{
-    margin-top: 0;
+    margin-top: 55px;
+
 }
+
 .tarefaContainer{
-    border: 1px solid black;
-    border-radius: 20px;
-    margin: 25px;
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.041);
+    border: 2px solid rgb(204, 204, 204);
+    columns: 2;
+    border-radius: 7px;
+    margin: 10px;
+    padding: 10px;
+    max-width: 100%;
+  
 }
+
 .tarefaContainer ul{
     display: flex;
 }
@@ -101,7 +160,7 @@ li{
     border-radius: 50px;
     margin-top: -50px;
     color: white;
-    background-color: black;
+    background-color: var(--cor0);
     width: 80px;
     height: 80px;
     display: flex;
@@ -127,7 +186,7 @@ li{
 
 .selectBox{
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 7px;
 }
 .selectBox:hover{
     cursor:pointer;
@@ -136,29 +195,56 @@ li{
 .btnTarefasOpcoes{
     background-color: var(--cor0);
     color: white;
-    padding: 10px;
-    border-radius: 20px;
+    padding: 5px;
+    border-radius: 7px;
     border: 0px;
-    border: 1px solid black;
+    margin: 7px;
+    align-items: center;
+    text-align: center;
+    display: flex;
 
 }
-
+.btnTarefasOpcoes{
+    max-height: 35px;
+}
+.btnTarefasOpcoes img{
+    height: 15px;
+    margin: 7px;
+}
 .btnTarefasOpcoes:hover{
     cursor:pointer;
-    color: var(--cor0);
-    background-color: white;
+    background-color: rgb(143, 143, 143);
     transition: 0.2s;
-    border: 1px solid black;
 
 }
 
 .optionStatus{
     font-size: 15px;
 }
+
+#Concluida{
+    color: rgb(173, 173, 173);
+    text-decoration: line-through;
+    font-weight: bolder;
+}
+#Concluida p{
+    color: rgb(207, 207, 207);
+
+}
+#Concluida h2{
+    color: rgb(207, 207, 207);
+
+}
+
+#Pendente{
+    color: red;
+    background-color: rgb(255, 225, 225);
+
+}
+
 /* Footer */
 footer{
-    font-size: 5px;
-
+    font-size: 15px;
     width: 100%;
     background-color: white;
     bottom: 0;

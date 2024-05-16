@@ -1,0 +1,36 @@
+.barraDeProgresso{
+    padding: 0;
+    margin: 20px;
+    max-width: 900px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: rgb(212, 212, 212);
+}
+
+.barraDeProgresso div {
+    height: 100%;
+    border-radius: 7px;
+    background-color: var(--cor0);
+    
+}
+
+#barraDeProgressoUl{
+    columns: 3;
+    list-style: none;
+    display: flex;
+    align-items: center;    
+}
+
+.liBarra{
+    width: 900px;
+    margin: 15px;
+}
+.liBandeira{
+    width: 80px;
+    margin: 15px;
+}
+
+.liProgresso{
+    width: 100px;
+    margin: 15px;
+}

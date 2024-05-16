@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Músicas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="midia/logo.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+          
+        <div class="headerBox">
+            <h1>
+                Buscador de músicas
+            </h1>
+        </div>
+    </header>
+    <body>
+        <main>
+            <h2>Insira as informações da música</h2>
+            <form id="musica_form">
+                <p>
+                <input type="text" class="styleTextInput"  name="escrever_artista" id="iartista" placeholder="artista"></p>
+                <p>
+                <input class="styleTextInput" type="text" name="escrever_musica" id="imusica" placeholder="musica"></p>
+                <p><input class="buttonStyle" type="submit" name="buscar" id="bmusica" value="Buscar" ></p>
+            </form>
+            <div id="resultado"></div>
+        </main>
+        <footer>
+            <p>Feito por Hiago Santos Silva</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

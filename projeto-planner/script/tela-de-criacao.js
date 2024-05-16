@@ -6,17 +6,22 @@ function criarTarefa() {
 
     let novaTarefa = document.createElement('div');
     novaTarefa.innerHTML = `
+        <p>
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" placeholder="Insira o nome">
+        </p>
+        <p>
         <label for="descricao">Descrição</label>
-        <input type="text" name="descricao" id="descricao">
+        <input type="text" name="descricao" id="descricao" placeholder="Insira uma descrição">
+       
+        <p>
+        <label for="pontos">Pontos</label>
+        <input type="number" name="pontos" id="pontos"  min="1" max="10" value="1">
         <label for="data">Data</label>
         <input type="datetime-local" name="data" id="data">
         </p>
         <p>
-        <label for="pontos">Pontos</label>
-        <input type="number" name="pontos" id="pontos"  min="1" max="10" value="1">
-        </p>
-        <p>
-        <button id="btnPadrao" onclick="obterDadosDeFormulario()">Adicionar Tarefa</button>
+        <button id="btnPadrao" onclick="obterDadosDeFormulario()">+ Adicionar Tarefa</button>
         </p>
     `;
 
@@ -26,6 +31,7 @@ function criarTarefa() {
 
 
 function obterDadosDeFormulario() {
+    var nome = document.getElementById('nome').value;
     var descricao = document.getElementById('descricao').value;
     var dataInput  = document.getElementById('data').value;
     var pontos = document.getElementById('pontos').value;
@@ -33,6 +39,7 @@ function obterDadosDeFormulario() {
     var dataFormatada = formatarDataAmigavel(dataInput);
 
     var tarefa = {
+        nome: nome,
         descricao: descricao,
         data: dataFormatada,
         pontos: pontos,
@@ -45,6 +52,7 @@ function obterDadosDeFormulario() {
 
     localStorage.setItem('tarefas', JSON.stringify(tarefasSalvas));
 
+    document.getElementById('nome').value = '';
     document.getElementById('descricao').value = '';
     document.getElementById('data').value = '';
     document.getElementById('pontos').value = '';
@@ -57,7 +65,7 @@ function formatarDataAmigavel(dataInput) {
     return data.toLocaleString(); // Formata a data para uma representação amigável
 }
 
-var status = document.gerElementById('selecao')
+var status = document.getElementById('selecao')
 var statusSelecionado = document.getElementById('')
 
 
@@ -70,30 +78,31 @@ function exibirRoadmap() {
     for (var i = 0; i < tarefasSalvas.length; i++) {
         var tarefaAtual = tarefasSalvas[i];
         roadmapHTML += `
-            <div class="tarefaContainer">
+            <div class="tarefaContainer" id="${tarefaAtual.status}">
+            <div class="iconTarefa" id="posicaoTarefa">${i+1}</div> 
+            
                 <ul> 
+                <button class="btnTarefasOpcoes" onclick="moverTarefaParaCima(${i})">↑</button>
+                <button class="btnTarefasOpcoes" onclick="moverTarefaParaBaixo(${i})">↓</button>
                     <li>
-                        <div class="iconTarefa" id="posicaoTarefa">${i+1}</div> 
-                    </li>
+                        <p class="dataTarefaEstilo"> Data de término: ${tarefaAtual.data}</p>
+                        <h2>${tarefaAtual.nome}</h2>
+                        <p class="descricaoTarefaEstilo"> ${tarefaAtual.descricao}</p>
+                        <p class="pontosTarefaEstilo"> Valendo ${tarefaAtual.pontos} Pontos</p>
 
-                    <li>
-                        <p> Descrição: ${tarefaAtual.descricao}</p>
-                        <p> Data de término: ${tarefaAtual.data}</p>
-                        <p> Pontos: ${tarefaAtual.pontos}</p>
-                        <p> Status:
                         <select id="status${i}" class="selectBox">
                             <option class="optionStatus" value="Em andamento" ${tarefaAtual.status === 'Em andamento' ? 'selected' : ''}>Em andamento</option>
                             <option class="optionStatus"value="Pendente" ${tarefaAtual.status === 'Pendente' ? 'selected' : ''}>Pendente</option>
                             <option class="optionStatus" value="Concluida" ${tarefaAtual.status === 'Concluida' ? 'selected' : ''}>Concluida</option>
                         </select>
-                        </p>
-                        <button class="btnTarefasOpcoes" id="bntExcluir${i}" onclick="deletarTarefa(${i})">Excluir</button>
-                        <button class="btnTarefasOpcoes" id="bntSalvar${i}" style="display: none;" onclick="salvarTarefa(${i})">Salvar</button>
+                        
 
-
+                        <button class="btnTarefasOpcoes" id="bntExcluir${i}" onclick="deletarTarefa(${i})"> <img src="midias/image/lixeira-icone.png"><p>Excluir</p></button>
+                        <button class="btnTarefasOpcoes" id="bntSalvar${i}" style="display: none;" onclick="salvarTarefa(${i})"><img src="midias/image/salvar-icone.png"><p>Salvar</p></button>
                     </li>
-                  
+                    
                 </ul>
+                       
             </div>
         `;
     }
@@ -105,7 +114,7 @@ function exibirRoadmap() {
     selectElements.forEach(function(selectElement, index) {
         selectElement.addEventListener('change', function() {
             var botaoSalvar = document.getElementById(`bntSalvar${index}`);
-            botaoSalvar.style.display = 'inline-block';
+            botaoSalvar.style.display = 'flex';
         });
     });
 }

@@ -1,0 +1,244 @@
+@charset "UTF-8";
+/* Estilos Globais */
+:root { 
+    --cor0: #1c435d;
+    --Cor1: ;    
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+
+}
+main{
+    max-width: 1580px;
+    background-color: rgb(255, 255, 255);
+}
+h1{
+    color: var(--cor0);
+    font-size: 19px;
+    padding: 17px;
+}
+h2{
+    font-size: 15px;
+    color: var(--cor0);
+}
+p{
+    font-size: 14px;
+    padding: 7px;
+}
+
+
+/* Header */
+
+.nomeRoadmap{
+    padding: 15px;
+    display: flex;
+
+}
+.nomeRoadmap input:focus{
+    outline: none;
+    border: 1px solid #ccc;
+}
+#nameRoadmap{
+    text-decoration: underline;
+    height: 60px;
+    font-weight: bolder;
+    color: var(--cor0);
+    font-size: 25px;
+    border: 0;
+    background-color: #17171b00;
+}
+
+.salvarNomeRoadmapStyle{
+    height: 20px;
+}
+.salvarNomeRoadmapStyle:hover{
+    cursor: pointer;
+
+}
+
+/* Criação de tarefas */
+
+section.CriadorSection{
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.041);
+    border: 1px solid rgb(184, 184, 184);
+    background-color: rgb(241, 241, 241);
+    border-radius: 7px;
+    margin: 15px;
+    padding: 10px;
+}
+
+section.CriadorSection input{
+    border-radius: 7px;
+    height: 15px;
+    padding: 10px;
+    border: 1px solid rgb(184, 184, 184);
+}
+
+ul.opcoesCriador{
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+}
+li{
+    text-align: center;
+    margin: 10px;
+}
+#btnPadrao{
+    border: 0;
+    background-color: var(--cor0);
+    color: white;
+    padding: 12px;
+    border-radius: 7px;
+}
+#btnPadrao:hover{
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.548);
+    cursor: pointer;
+}
+
+
+#descricao {
+    width: 70%;
+}
+/*Roadmap de tarefas*/
+p.dataTarefaEstilo{
+    font-weight: lighter;
+    font-size: 12px ;
+    color: gray;
+}
+p.descricaoTarefaEstilo{
+    color: gray;
+
+}
+p.pontosTarefaEstilo{
+    background-color: var(--cor0);
+    color: white;
+    padding: 7px;
+    margin: 7px;
+    border-radius: 7px;
+}
+.selectBox{
+    margin: 7px;
+
+}
+#posicaoTarefa{
+    font-size: 55px;
+}
+.RoadmapSection{
+    margin-top: 55px;
+
+}
+.tarefaContainer{
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.041);
+    border: 2px solid rgb(204, 204, 204);
+    columns: 2;
+    border-radius: 7px;
+    margin: 10px;
+    padding: 10px;
+}
+.tarefaContainer ul{
+    display: flex;
+}
+.tarefaContainer li {
+    list-style: none;
+    text-align: left;
+}
+.iconTarefa{
+    border-radius: 50px;
+    margin-top: -50px;
+    color: white;
+    background-color: var(--cor0);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconTarefa p {
+    text-align: center;
+}
+
+#bntExcluir{
+    color: red;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+}
+#bntExcluir:hover{
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.548);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.selectBox{
+    padding: 10px;
+    border-radius: 7px;
+}
+.selectBox:hover{
+    cursor:pointer;
+}
+
+.btnTarefasOpcoes{
+    background-color: var(--cor0);
+    color: white;
+    padding: 5px;
+    border-radius: 7px;
+    border: 0px;
+    margin: 7px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+
+}
+.btnTarefasOpcoes img{
+    height: 15px;
+    margin: 7px;
+}
+.btnTarefasOpcoes:hover{
+    cursor:pointer;
+    background-color: rgb(143, 143, 143);
+    transition: 0.2s;
+
+}
+
+.optionStatus{
+    font-size: 15px;
+}
+
+#Concluida{
+    color: rgb(173, 173, 173);
+    text-decoration: line-through;
+    font-weight: bolder;
+}
+#Concluida p{
+    color: rgb(207, 207, 207);
+
+}
+#Concluida h2{
+    color: rgb(207, 207, 207);
+
+}
+
+#Pendente{
+    color: red;
+    background-color: rgb(255, 225, 225);
+
+}
+
+/* Footer */
+footer{
+    font-size: 15px;
+    width: 100%;
+    background-color: white;
+    bottom: 0;
+    text-align: center;
+    position: fixed;
+}

@@ -1,48 +1,92 @@
-<!DOCTYPE html>
+              <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planner</title>
+    <link rel="stylesheet" href="style/mobile.css">
+    <link rel="stylesheet" href="style/menuMobile.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/menu.css">
     <link rel="stylesheet" href="style/barraDeProgresso.css">
     <link rel="shortcut icon" href="midias/image/logo-icone.png" type="image/x-icon">
 </head>
 <body>
-    <nav>
+    
+    <nav id="menuSuperior" style="display: none;">
+        <ul>  
+            <li>
+                <a href="index.html">
+                    <img src="midias/image/home-icone.png" class="mobileIcon" alt="icone home">
+                </a>
+            </li>
+        </ul>
+        
+       
+     </nav>
+
+    <nav id="menuLateral">
         <!--Menu lateral -->
         <div class="barralateral">
-            <a href="index.html"> <p> Página principal</p> </a> 
-            <a href="tela-de-criacao.html"> <p>Página de criação</p> </a>  
+            <a href="index.html">
+                <p><img src="midias/image/home-icone.png" alt="icone home" > Página principal</p> 
+
+            </a> 
         </div>
     </nav>
-
     <header>
-        <h1>Roadmap Atual</h1>
-    </header>
-
-    <main>    
-        <!--Barra de progresso -->
-        <div class="barraDeProgresso">      
-            <div></div>
+        <div class="nomeRoadmap">
+            <p><img src="midias/image/logo-icone.png" alt="icone home" > </p>
+            <p><input type="text" name="nameRoadmap" id="nameRoadmap" placeholder="Insira o nome do Roadmap"></p>
+            <p><img src="midias/image/salvar-icone-colored.png" id="salvarNomeRoadmap" class="salvarNomeRoadmapStyle" alt="" onclick="salvarRoadmap()"></p>
         </div>
-        <div class="bandeira"><img src="midias/image/flag.png" id="bandeira" alt="bandeira da linha de chegada"></div>
-        <div id="contadorProgresso"></div>
-        <!--Menu lateral -->
+    </header>
+    <main>    
+      
+    
+        <!--Seção de criação de Roadmaps -->
+        <section class="CriadorSection">
+            <ul class="opcoesCriador">
+                <li> <h1>opções de criação</h1></li>
+                <li> <button type="button" id="btnPadrao"  onclick="criarTarefa()">+ Criar tarefa</button></li>
+            </ul>
+            <div id="criador"></div>
+        </section>
+
+        <!--Barra de progresso -->
+        <ul id="barraDeProgressoUl">
+            <li class="liBandeira">
+                <div class="bandeira"><img src="midias/image/flag.png" id="bandeira" alt="bandeira da linha de chegada"></div>
+            </li>
+            <li class="liProgresso">
+                <div id="contadorProgresso"></div>
+            </li>
+            <li class="liBarra"> 
+                    <div class="barraDeProgresso">      
+                    <div></div>
+                    </div>
+            </li>
+          
+        </ul>
+        <hr>
+
+        <!--Sessão do Roadmap -->
+        <h1> Minhas Tarefas: </h1>
         <section class="RoadmapSection">
             <div id="Roadmap"></div>
         </section>
     </main>
 
     <footer>
-        <p>Planner - Criado por Hiago Santos Silva (2024).</p>
+        <p>© Hiago Santos Silva </p>
     </footer>
 
 <script src="script/tela-de-criacao.js"></script>
 <script src="script/index.js"></script>
 <script src="script/contagem-de-pontos.js"></script>
 <script src="script/barra-de-progresso.js"></script>
+<script src="script/salvarRoadmap.js"></script>
+<script src="script/botoes-de-movimento.js"></script>
 
 </body>
 </html>
